@@ -1,4 +1,4 @@
--- Author Sævar Örn Valsson
+-- Sævar Örn Valsson and Þórfríður Ina Arinbjarnardóttir
 
 -- A. (10%) 433 different employees started working in 2007. How many different
 -- employees started working in 2015?
@@ -74,19 +74,17 @@ drop view if EXISTS EmployeeQuit
 
 create view EmployeeQuit
 AS
-select E.name, W.start_date, W.quit_date
+select E.name, W.start_date, W.quit_date, (w.quit_date-w.start_date) as dateworked
 from Works W
 join employee E
     on E.id = W.eid
 where W.quit_date is not null;
 
-select * from EmployeeQuit;
-
 select name, start_date, quit_date
 from EmployeeQuit
+where dateworked = (select max(dateworked) from EmployeeQuit);
 
 
-
-select CAST(start_date AS year)
-from works;
+-- F. How many employees have salary that differs by less than 10% from the 
+-- market average for their role and have treated a patient that is still admitted in a hospital?
 
