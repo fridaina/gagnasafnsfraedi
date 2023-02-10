@@ -1,4 +1,4 @@
--- Sævar Örn Valsson and Þórfríður Ina Arinbjarnardót
+-- Sævar Örn Valsson and Þórfríður Ina Arinbjarnardóttir
 
 -- A. (10%) 433 different employees started working in 2007. How many different
 -- employees started working in 2015?
